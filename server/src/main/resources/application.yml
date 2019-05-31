@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: app-bob-product
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    #url: jdbc:mysql://127.0.0.1:3306/wx_sell?characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://47.97.190.0:3306/wx_sell?characterEncoding=utf8&useSSL=false
+    username: root
+    password: root
+
+server:
+  port: 8001
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+###分页插件
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
